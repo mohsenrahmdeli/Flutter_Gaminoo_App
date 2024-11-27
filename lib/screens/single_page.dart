@@ -195,15 +195,19 @@ class _SinglePageState extends State<SinglePage> {
                     Text(
                       'توضیحات',
                       style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'heavy'),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Text.rich(
+                      textDirection: TextDirection.rtl,
                       TextSpan(
                         children: [
                           TextSpan(
+                            style: TextStyle(fontFamily: 'Regular'),
                             text: isDescriptionExpanded
                                 ? 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.'
                                 : 'لورم ایپسوم متن ساختگی با تولید سادگی...',
@@ -211,16 +215,19 @@ class _SinglePageState extends State<SinglePage> {
                           WidgetSpan(
                             child: GestureDetector(
                               onTap: () {
-                                setState(() {
-                                  isDescriptionExpanded =
-                                      !isDescriptionExpanded;
-                                });
+                                setState(
+                                  () {
+                                    isDescriptionExpanded =
+                                        !isDescriptionExpanded;
+                                  },
+                                );
                               },
                               child: Text(
-                                isDescriptionExpanded ? ' بستن' : ' بیشتر+',
+                                isDescriptionExpanded ? 'بستن ' : ' بیشتر +',
                                 style: TextStyle(
                                   color: Colors.blue,
                                   fontWeight: FontWeight.bold,
+                                  fontFamily: 'Regular',
                                 ),
                               ),
                             ),
@@ -277,6 +284,7 @@ class _SinglePageState extends State<SinglePage> {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
+                        fontFamily: 'heavy',
                       ),
                     ),
                   ],
@@ -287,10 +295,17 @@ class _SinglePageState extends State<SinglePage> {
               ),
               ElevatedButton(
                 onPressed: () {},
-                child: Text('افزودن به سبد خرید'),
+                child: Text(
+                  'افزودن به سبد خرید',
+                  style: TextStyle(
+                      fontFamily: 'heavy', color: Colors.white, fontSize: 18),
+                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
-                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 100,
+                    vertical: 15,
+                  ),
                 ),
               ),
               SizedBox(height: 20),
