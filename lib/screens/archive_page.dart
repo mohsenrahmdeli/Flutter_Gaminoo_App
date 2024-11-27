@@ -82,7 +82,7 @@ class ArchivePage extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                              top: -40,
+                              top: -50,
                               left: 25,
                               right: 25,
                               child: Center(
@@ -149,7 +149,7 @@ class ArchivePage extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                              top: -40,
+                              top: -50,
                               left: 25,
                               right: 25,
                               child: Center(
@@ -216,7 +216,7 @@ class ArchivePage extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                              top: -40,
+                              top: -50,
                               left: 25,
                               right: 25,
                               child: Center(
@@ -284,7 +284,7 @@ class ArchivePage extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                              top: -40,
+                              top: -50,
                               left: 25,
                               right: 25,
                               child: Center(
@@ -351,7 +351,7 @@ class ArchivePage extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                              top: -40,
+                              top: -50,
                               left: 25,
                               right: 25,
                               child: Center(
@@ -418,7 +418,7 @@ class ArchivePage extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                              top: -40,
+                              top: -50,
                               left: 25,
                               right: 25,
                               child: Center(
@@ -442,51 +442,6 @@ class ArchivePage extends StatelessWidget {
   }
 }
 
-// class ProductCard extends StatelessWidget {
-//   final String imagePath;
-//   final String title;
-//   final String price;
-
-//   const ProductCard({
-//     required this.imagePath,
-//     required this.title,
-//     required this.price,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Card(
-//       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-//       elevation: 4,
-//       child: Column(
-//         crossAxisAlignment: CrossAxisAlignment.center,
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: [
-//           Expanded(
-//             child: Padding(
-//               padding: const EdgeInsets.all(8.0),
-//               child: Image.asset(imagePath, fit: BoxFit.contain),
-//             ),
-//           ),
-//           Padding(
-//             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-//             child: Text(
-//               title,
-//               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-//               textAlign: TextAlign.center,
-//             ),
-//           ),
-//           SizedBox(height: 4),
-//           Text(
-//             price,
-//             style: TextStyle(fontSize: 14, color: Colors.black54),
-//           ),
-//           SizedBox(height: 8),
-//         ],
-//       ),
-//     );
-//   }
-// }
 
 class Item {
   final String imagePath;
