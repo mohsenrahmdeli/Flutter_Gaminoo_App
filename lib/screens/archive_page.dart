@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
+import 'package:flutter/services.dart';
 
 class ArchivePage extends StatelessWidget {
   final List<Map<String, String>> items = [
@@ -24,33 +26,75 @@ class ArchivePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueGrey[50],
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(35, 20, 35, 20),
-        child: SingleChildScrollView(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.blueGrey[50],
+        body: SingleChildScrollView(
           child: Column(
             children: [
-              Stack(
-                clipBehavior: Clip.none,
-                alignment: AlignmentDirectional.bottomCenter,
-                children: [
-                  Center(
-                    child: Image.asset(
-                      'assets/images/Logo.png',
-                      height: 120,
-                      fit: BoxFit.cover,
+              Padding(
+                padding: const EdgeInsets.only(top:25),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: GestureDetector(
+                    onTap: () {
+                      SystemNavigator.pop();
+                    },
+                    child: Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                      decoration: BoxDecoration(
+                        color: Color(0XFFb9d1d7),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Image.asset(
+                            'assets/images/solar_logout-2-outline.png',
+                            height: 20,
+                            width: 20,
+                          ),
+                          SizedBox(width: 5),
+                          Text(
+                            'خروج',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontFamily: 'Regular',
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  Text(
-                    'فروشگاه',
-                    style: TextStyle(
-                      fontFamily: 'heavy',
-                    ),
-                  ),
-                ],
+                ),
               ),
-              SizedBox(
+              Padding(
+                padding: const EdgeInsets.fromLTRB(35, 0, 35, 20),
+                child: Column(
+                  children: [
+                    Stack(
+                      clipBehavior: Clip.none,
+                      alignment: AlignmentDirectional.bottomCenter,
+                      children: [
+                        Center(
+                          child: Image.asset(
+                            'assets/images/Logo.png',
+                            height: 120,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Text(
+                          'فروشگاه',
+                          style: TextStyle(
+                            fontFamily: 'heavy',
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
                 height: 50,
               ),
               Wrap(
@@ -58,6 +102,10 @@ class ArchivePage extends StatelessWidget {
                 runSpacing: 50,
                 children: items.map((item) => buildItemCard(item)).toList(),
               ),
+                  ],
+                ),
+              ),
+              
             ],
           ),
         ),
@@ -135,3 +183,4 @@ class ArchivePage extends StatelessWidget {
     );
   }
 }
+//const EdgeInsets.fromLTRB(35, 5, 35, 20),
