@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../compnent/components.dart';
 import 'signup_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -8,8 +8,8 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0XFFdfe5ff),
-      body: Login(),
+      backgroundColor: const Color(0XFFdfe5ff),
+      body: const Login(),
     );
   }
 }
@@ -22,6 +22,9 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -47,122 +50,50 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 30,
-            ),
-            const Text(
-              'ایمیل',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.black,
-                fontFamily: 'Regular',
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            TextFormField(
-              keyboardType: TextInputType.emailAddress,
-              textAlign: TextAlign.end,
+            const SizedBox(height: 30),
+            CustomTextField(
+              labelText: 'ایمیل',
+              hintText: 'info@example.com',
+              controller: emailController,
+              inputType: TextInputType.emailAddress,
               textDirection: TextDirection.ltr,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(40),
-                ),
-                hintText: 'ionfo@example.com',
-                hintStyle: TextStyle(
-                  color: Colors.black12,
-                  fontSize: 12,
-                ),
-                filled: true,
-                fillColor: Colors.white,
-                hintTextDirection: TextDirection.ltr,
-              ),
             ),
-            SizedBox(
-              height: 15,
-            ),
-            const Text(
-              'رمز عبور',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.black,
-                fontFamily: 'Regular',
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            TextFormField(
+            const SizedBox(height: 15),
+            CustomTextField(
+              labelText: 'رمز عبور',
+              hintText: 'رمز عبور دلخواه حداقل 5 کاراکتر',
               obscureText: true,
-              obscuringCharacter: '*',
-              keyboardType: TextInputType.emailAddress,
-              textAlign: TextAlign.end,
-              textDirection: TextDirection.ltr,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(40),
-                ),
-                hintText: 'رمز عبور دلخواه حداقل 5 کارکتر',
-                hintStyle: TextStyle(
-                  color: Colors.black12,
-                  fontSize: 12,
-                ),
-                filled: true,
-                fillColor: Colors.white,
-                hintTextDirection: TextDirection.ltr,
-              ),
+              controller: passwordController,
             ),
-            const SizedBox(
-              height: 50,
-            ),
+            const SizedBox(height: 50),
             Center(
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 140,
-                    vertical: 12,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                ),
-                onPressed: () {},
-                child: const Text(
-                  'ورود',
-                  style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontFamily: 'heavy'),
-                ),
+              child: CustomButton(
+                text: 'ورود',
+                onPressed: () {
+                  print('ایمیل: ${emailController.text}');
+                  print('رمز عبور: ${passwordController.text}');
+                },
               ),
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15),
             Center(
               child: GestureDetector(
                 onTap: () {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SignUpPage(),
+                      builder: (context) => const SignUpPage(),
                     ),
                   );
                 },
                 child: const Text(
                   "ایجاد حساب کاربری",
                   style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey,
-                      decoration: TextDecoration.underline,
-                      fontFamily: 'Regular'),
+                    fontSize: 14,
+                    color: Colors.grey,
+                    decoration: TextDecoration.underline,
+                    fontFamily: 'Regular',
+                  ),
                 ),
               ),
             ),
