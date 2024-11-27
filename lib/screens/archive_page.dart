@@ -1,132 +1,518 @@
 import 'package:flutter/material.dart';
 
 class ArchivePage extends StatelessWidget {
-  const ArchivePage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFDCE4FF),
+      backgroundColor: Colors.blueGrey[50],
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: ElevatedButton.icon(
-                onPressed: () {},
-                icon: const Icon(Icons.logout, color: Colors.grey),
-                label: const Text(
-                  "خروج",
-                  style: TextStyle(color: Colors.grey),
+          padding: const EdgeInsets.fromLTRB(35, 20, 35, 10),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+                      Center(
+                        child: Image.asset(
+                          'assets/images/Logo.png',
+                          height: 120,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Text('فروشگاه', style: TextStyle(fontFamily: 'heavy')),
+                    ],
+                    alignment: AlignmentDirectional.bottomCenter),
+                SizedBox(
+                  height: 50,
                 ),
-                style: ElevatedButton.styleFrom(
-                  elevation: 0,
-                  backgroundColor: const Color(0xFFDCE4FF),
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
-            Center(
-              child: Column(
-                children: const [
-                  Text(
-                    "G",
-                    style: TextStyle(
-                      fontSize: 60,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              elevation: 5,
+                              child: SizedBox(
+                                height: 150,
+                                width: 150,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 60, left: 10, right: 10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'دسته بازی XBOX',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Regular'),
+                                        textAlign: TextAlign.center,
+                                        textDirection: TextDirection.rtl,
+                                      ),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Text(
+                                        '۵۰۰,۰0۰',
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            color: Colors.black54,
+                                            fontFamily: 'heavy'),
+                                      ),
+                                      Text(
+                                        'تومان',
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.black54,
+                                            fontFamily: 'heavy'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              top: -40,
+                              left: 25,
+                              right: 25,
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/Controller.png',
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 75,
+                        ),
+                        Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              elevation: 5,
+                              child: SizedBox(
+                                height: 150,
+                                width: 150,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 60, left: 10, right: 10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'دسته بازی XBOX',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Regular'),
+                                        textAlign: TextAlign.center,
+                                        textDirection: TextDirection.rtl,
+                                      ),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Text(
+                                        '۵۰۰,۰0۰',
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            color: Colors.black54,
+                                            fontFamily: 'heavy'),
+                                      ),
+                                      Text(
+                                        'تومان',
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.black54,
+                                            fontFamily: 'heavy'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              top: -40,
+                              left: 25,
+                              right: 25,
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/Mobile.png',
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 75,
+                        ),
+                        Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              elevation: 5,
+                              child: SizedBox(
+                                height: 150,
+                                width: 150,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 60, left: 10, right: 10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'دسته بازی XBOX',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Regular'),
+                                        textAlign: TextAlign.center,
+                                        textDirection: TextDirection.rtl,
+                                      ),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Text(
+                                        '۵۰۰,۰0۰',
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            color: Colors.black54,
+                                            fontFamily: 'heavy'),
+                                      ),
+                                      Text(
+                                        'تومان',
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.black54,
+                                            fontFamily: 'heavy'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              top: -40,
+                              left: 25,
+                              right: 25,
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/SmartWatch.png',
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                  ),
-                  Text(
-                    "فروشگاه",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black,
-                      fontFamily: 'Regular'
+                    Column(
+                      children: [
+                        Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              elevation: 5,
+                              child: SizedBox(
+                                height: 150,
+                                width: 150,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 60, left: 10, right: 10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'دسته بازی XBOX',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Regular'),
+                                        textAlign: TextAlign.center,
+                                        textDirection: TextDirection.rtl,
+                                      ),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Text(
+                                        '۵۰۰,۰0۰',
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            color: Colors.black54,
+                                            fontFamily: 'heavy'),
+                                      ),
+                                      Text(
+                                        'تومان',
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.black54,
+                                            fontFamily: 'heavy'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              top: -40,
+                              left: 25,
+                              right: 25,
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/TV.png',
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 75,
+                        ),
+                        Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              elevation: 5,
+                              child: SizedBox(
+                                height: 150,
+                                width: 150,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 60, left: 10, right: 10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'دسته بازی XBOX',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Regular'),
+                                        textAlign: TextAlign.center,
+                                        textDirection: TextDirection.rtl,
+                                      ),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Text(
+                                        '۵۰۰,۰0۰',
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            color: Colors.black54,
+                                            fontFamily: 'heavy'),
+                                      ),
+                                      Text(
+                                        'تومان',
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.black54,
+                                            fontFamily: 'heavy'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              top: -40,
+                              left: 25,
+                              right: 25,
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/SmartWatch.png',
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 75,
+                        ),
+                        Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              elevation: 5,
+                              child: SizedBox(
+                                height: 150,
+                                width: 150,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 60, left: 10, right: 10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'دسته بازی XBOX',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Regular'),
+                                        textAlign: TextAlign.center,
+                                        textDirection: TextDirection.rtl,
+                                      ),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Text(
+                                        '۵۰۰,۰0۰',
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            color: Colors.black54,
+                                            fontFamily: 'heavy'),
+                                      ),
+                                      Text(
+                                        'تومان',
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            color: Colors.black54,
+                                            fontFamily: 'heavy'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              top: -40,
+                              left: 25,
+                              right: 25,
+                              child: Center(
+                                child: Image.asset(
+                                  'assets/images/Controller.png',
+                                  height: 100,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20),
-            Expanded(
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 15, 
-                  mainAxisSpacing: 15,
-                  childAspectRatio: 0.8, 
+                  ],
                 ),
-                itemCount: 6,
-                itemBuilder: (context, index) {
-                  return ProductCard(
-                    imagePath: 'assets/images/product_$index.png', 
-                    title: "دسته بازی XBOX", 
-                    price: "۵,۰۰۰,۰۰۰ تومان",
-                  );
-                },
-              ),
+              ],
             ),
-          ],
-        ),
-      ),
+          )),
     );
   }
 }
 
-class ProductCard extends StatelessWidget {
+// class ProductCard extends StatelessWidget {
+//   final String imagePath;
+//   final String title;
+//   final String price;
+
+//   const ProductCard({
+//     required this.imagePath,
+//     required this.title,
+//     required this.price,
+//   });
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card(
+//       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+//       elevation: 4,
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           Expanded(
+//             child: Padding(
+//               padding: const EdgeInsets.all(8.0),
+//               child: Image.asset(imagePath, fit: BoxFit.contain),
+//             ),
+//           ),
+//           Padding(
+//             padding: const EdgeInsets.symmetric(horizontal: 8.0),
+//             child: Text(
+//               title,
+//               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+//               textAlign: TextAlign.center,
+//             ),
+//           ),
+//           SizedBox(height: 4),
+//           Text(
+//             price,
+//             style: TextStyle(fontSize: 14, color: Colors.black54),
+//           ),
+//           SizedBox(height: 8),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+class Item {
   final String imagePath;
-  final String title;
-  final String price;
 
-  const ProductCard({
-    Key? key,
+  Item({
     required this.imagePath,
-    required this.title,
-    required this.price,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      elevation: 3,
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.contain,
-              ),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 5),
-            Text(
-              price,
-              style: const TextStyle(
-                fontSize: 12,
-                color: Colors.grey,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+  });
 }
+
+final List<Item> items = [
+  Item(
+    imagePath: 'assets/images/Controller.png',
+  ),
+  Item(
+    imagePath: 'assets/images/TV.png',
+  ),
+  Item(
+    imagePath: 'assets/images/Controller.png',
+  ),
+  Item(
+    imagePath: 'assets/images/Controller.png',
+  ),
+  Item(
+    imagePath: 'assets/images/Controller.png',
+  ),
+  Item(
+    imagePath: 'assets/images/Controller.png',
+  ),
+];
