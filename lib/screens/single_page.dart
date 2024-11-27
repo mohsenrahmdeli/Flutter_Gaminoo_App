@@ -21,6 +21,7 @@ class _SinglePageState extends State<SinglePage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 25),
@@ -51,7 +52,7 @@ class _SinglePageState extends State<SinglePage> {
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
+                              color: Colors.black54,
                               fontFamily: 'Regular',
                             ),
                           ),
@@ -77,14 +78,20 @@ class _SinglePageState extends State<SinglePage> {
                           child: Text(
                             'دسته بازی',
                             style: TextStyle(
-                                color: Colors.white, fontFamily: 'Regular'),
+                              color: Colors.white,
+                              fontFamily: 'Regular',
+                              fontSize: 14,
+                            ),
                           ),
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: Colors.blueAccent,
                           borderRadius: BorderRadius.circular(18),
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 5,
                     ),
                     Align(
                       alignment: Alignment.topRight,
@@ -100,16 +107,30 @@ class _SinglePageState extends State<SinglePage> {
                       ),
                     ),
                     Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        '۵۰۰,۰۰۰ تومان',
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black54,
-                            fontFamily: 'heavy'),
-                        textDirection: TextDirection.rtl,
-                      ),
-                    ),
+                        alignment: Alignment.topLeft,
+                        child: Row(
+                          children: [
+                            Text(
+                              'تومان',
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.black54,
+                                  fontFamily: 'heavy'),
+                              textDirection: TextDirection.rtl,
+                            ),
+                            SizedBox(
+                              width: 3,
+                            ),
+                            Text(
+                              '۵۰۰,۰۰۰',
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  color: Colors.black54,
+                                  fontFamily: 'heavy'),
+                              textDirection: TextDirection.rtl,
+                            ),
+                          ],
+                        )),
                   ],
                 ),
               ),
@@ -212,7 +233,7 @@ class _SinglePageState extends State<SinglePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.only(right: 70),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -249,7 +270,7 @@ class _SinglePageState extends State<SinglePage> {
                       }),
                     ),
                     SizedBox(
-                      width: 15,
+                      width: 35,
                     ),
                     Text(
                       'انتخاب رنگ',
